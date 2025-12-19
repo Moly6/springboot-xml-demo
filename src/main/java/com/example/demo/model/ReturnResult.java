@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
 
@@ -9,15 +10,17 @@ import lombok.Data;
 @Data
 public class ReturnResult {
   @JacksonXmlProperty(localName = "ErrMsg")
+  @JsonProperty("ErrMsg")
   private String errMsg;
 
   @JacksonXmlProperty(localName = "ErrCode")
-  private int errCode;
+  @JsonProperty("ErrCode")
+  private String errCode;
 
   public ReturnResult() {
   }
 
-  public ReturnResult(int errCode, String errMsg) {
+  public ReturnResult(String errCode, String errMsg) {
     this.errCode = errCode;
     this.errMsg = errMsg;
   }

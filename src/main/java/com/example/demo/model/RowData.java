@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
@@ -15,8 +16,9 @@ import java.util.List;
 @Data
 public class RowData<T> {
 
-  @JacksonXmlElementWrapper(useWrapping = false)
+  @JsonProperty("Row")
   @JacksonXmlProperty(localName = "Row")
+  @JacksonXmlElementWrapper(useWrapping = false)
   private List<T> rows;
 
   public RowData() {

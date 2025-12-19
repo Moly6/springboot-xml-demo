@@ -57,7 +57,7 @@ public class MockThirdPartyService {
     List<PatientRow> patients = Arrays.asList(patient1, patient2);
 
     RowData<PatientRow> data = new RowData<>(patients);
-    ReturnResult result = new ReturnResult(0, "查询成功");
+    ReturnResult result = new ReturnResult("0", "查询成功");
 
     return new Response<>(result, data);
   }
@@ -87,7 +87,7 @@ public class MockThirdPartyService {
     List<DepartmentRow> departments = Arrays.asList(dept1, dept2, dept3);
 
     RowData<DepartmentRow> data = new RowData<>(departments);
-    ReturnResult result = new ReturnResult(0, "查询成功");
+    ReturnResult result = new ReturnResult("0", "查询成功");
 
     return new Response<>(result, data);
   }
